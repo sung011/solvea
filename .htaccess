@@ -1,0 +1,9 @@
+# CodeIgniter 4 — 프로젝트 루트를 문서 루트로 쓸 때 public/ 으로 넘깁니다.
+<IfModule mod_rewrite.c>
+	Options +FollowSymlinks
+	RewriteEngine On
+
+	RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+DirectoryIndex public/index.php index.php
