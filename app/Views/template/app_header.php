@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title><?= esc($pageTitle ?? '나도대상?') ?></title>
-    <link rel="stylesheet" href="/css/style.css?v=20260904i"/>
+    <link rel="stylesheet" href="/css/style.css?v=20260904j"/>
     <script>
         const baseUrl = <?= json_encode(rtrim(base_url(), '/')) ?>;
     </script>
@@ -33,7 +33,7 @@
                       stroke-linecap="round"/>
               </svg>
             </span>
-            
+
             나도대상?
         </a>
         <?php if (($bodyClass ?? '') !== 'page-auth'): ?>
@@ -91,6 +91,12 @@
         <div class="menu-panel-links">
             <a href="/">새 대화</a>
             <a href="/favorites">저장한 정책</a>
+            <?php if (!empty($currentUser)): ?>
+                <a href="/logout">로그아웃</a>
+            <?php else: ?>
+                <a href="/login">로그인</a>
+                <a href="/signup">회원가입</a>
+            <?php endif; ?>
         </div>
     </aside>
     <style>
