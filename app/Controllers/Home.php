@@ -13,4 +13,12 @@ class Home extends BaseController
     {
         return render('results', ['bodyClass' => 'page-results']);
     }
+
+    public function favorites(): string
+    {
+        return render('favorites', [
+            'bodyClass' => 'page-favorites',
+            'pageTitle' => '저장한 정책 · 나도대상?',
+        ]);
+    }
 }

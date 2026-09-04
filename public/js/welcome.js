@@ -8,6 +8,15 @@
         const form = document.forms['ask'];
         if (!form) return;
         form.addEventListener('submit', handleSubmit);
+        const queryInput = form.querySelector('[name="q"]');
+        if (queryInput?.tagName === 'TEXTAREA') {
+            queryInput.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    form.requestSubmit();
+                }
+            });
+        }
 
         document.querySelectorAll('.prompt-card').forEach((btn) => {
             btn.addEventListener('click', () => {
@@ -30,7 +39,7 @@
         e.stopImmediatePropagation();
 
         const form = e.currentTarget;
-        const q = (form.q?.value || '').trim();
+        const q = (form.querySelector('[name="q"]')?.value || '').trim();
 
         if (!q || q.length < 2) {
             utils.showToast('두자리 이상 입력해주세요.', () => form.q.focus());

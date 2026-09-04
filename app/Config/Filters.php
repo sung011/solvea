@@ -52,10 +52,10 @@ class Filters extends BaseFilters
     public array $required = [
         'before' => [
             'forcehttps', // Force Global Secure Requests
-            'pagecache',  // Web Page Caching
+            // 'pagecache',  // API/검색 결과가 캐시되면 안 되므로 비활성
         ],
         'after' => [
-            'pagecache',   // Web Page Caching
+            // 'pagecache',
             'performance', // Performance Metrics
             'toolbar',     // Debug Toolbar
         ],

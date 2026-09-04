@@ -1,53 +1,40 @@
 <main class="hero">
-    <h1>공고는 찾았는데,<br/>나한테 될까요?</h1>
-    <p>나이, 거주, 취업 상태를 말하면 지역 지원사업 자격과<br/>준비 서류를 공고 근거와 함께 찾아 드립니다.</p>
+    <span class="hero-mark" aria-hidden="true">
+      <svg viewBox="0 0 80 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="heroGrad" x1="12" y1="8" x2="68" y2="90" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#5FE3C0"/>
+            <stop offset=".45" stop-color="#1CB8A8"/>
+            <stop offset="1" stop-color="#0A8F8A"/>
+          </linearGradient>
+        </defs>
+        <path d="M40 8c-14.5 0-26 10.2-26 24.2 0 8.4 4.2 14.6 11.2 19.4 4.6 3.2 7.8 6.6 8.4 12.2h12.2c-.4-8.2-4.6-13-10.4-17-5.6-3.8-8.6-7.4-8.6-14.2 0-8.2 6.2-13.8 13.2-13.8 7.4 0 13 5.2 13 12.8 0 4.2-1.6 7.4-4.8 10.2l8.6 7.2c5.2-4.8 8.2-11 8.2-18.4C65 17.4 54.2 8 40 8Z" fill="url(#heroGrad)"/>
+        <path d="M34.5 72.5c2.2 3.8 5.4 7.2 9.8 10.2 1.6 1.1 3.6.4 4.4-1.4l2.2-4.8c.7-1.6-.1-3.4-1.8-4-3.2-1.2-5.6-2.8-7.4-4.8l-7.2 4.8Z" fill="url(#heroGrad)"/>
+        <path d="M58 18h7M62.5 12.5l4 4M66.5 23.5l4-2.5" stroke="url(#heroGrad)" stroke-width="5" stroke-linecap="round"/>
+        <path d="M28 84.5c6.5 5.5 14.8 8.8 24.2 8.8" stroke="url(#heroGrad)" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <h1>지금 어떤 도움이 필요하신가요?</h1>
+    <p>내 상황에 맞는 청년정책, 함께 찾아봐요.</p>
+
+    <form class="composer-wrap" id="ask" name="ask" autocomplete="off">
+        <div class="composer">
+            <textarea id="q" name="q" rows="2" placeholder="지금 겪고 있는 고민을 자유롭게 적어 주세요" autocomplete="off"></textarea>
+            <button class="send" type="submit" aria-label="검색">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 19V5M12 5l-6 6M12 5l6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+        <p class="composer-help">Enter로 전송 · Shift+Enter로 줄바꿈</p>
+    </form>
 </main>
 
-<section class="prompt-grid" aria-label="빠른 검색">
-    <button class="prompt-card" type="button" data-q="광주 27살 구직중">
-      <span class="prompt-icon icon-user">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.2" stroke="currentColor"
-                                                                            stroke-width="1.8"/><path
-                    d="M5.5 19.2c1.4-3 3.7-4.5 6.5-4.5s5.1 1.5 6.5 4.5" stroke="currentColor" stroke-width="1.8"
-                    stroke-linecap="round"/></svg>
-      </span>
-        광주 27살 · 구직중
-    </button>
-    <button class="prompt-card" type="button" data-q="전남 취업자 월세 지원">
-      <span class="prompt-icon icon-job">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="7" width="17" height="13" rx="2"
-                                                                          stroke="currentColor" stroke-width="1.8"/><path
-                    d="M8 7V6.2A2.2 2.2 0 0 1 10.2 4h3.6A2.2 2.2 0 0 1 16 6.2V7" stroke="currentColor"
-                    stroke-width="1.8"/></svg>
-      </span>
-        전남 취업자 · 월세
-    </button>
-    <button class="prompt-card" type="button" data-q="임차보증금 이자지원">
-      <span class="prompt-icon icon-home">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path
-                    d="M4 11.5 12 4l8 7.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-8.5Z" stroke="currentColor"
-                    stroke-width="1.8" stroke-linejoin="round"/></svg>
-      </span>
-        임차보증금 이자지원
-    </button>
-    <button class="prompt-card" type="button" data-q="청년 주거 지원 서류가 뭐가 필요해?">
-      <span class="prompt-icon icon-doc">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path
-                    d="M7 3.5h7l5 5V20a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4.5a1 1 0 0 1 1-1Z" stroke="currentColor"
-                    stroke-width="1.8"/><path d="M14 3.5V9h5.5M8.5 13h7M8.5 16.5h5" stroke="currentColor"
-                                              stroke-width="1.8" stroke-linecap="round"/></svg>
-      </span>
-        서류가 뭐가 필요해?
-    </button>
-</section>
-<form class="composer-wrap" id="ask" name="ask" autocomplete="off">
-    <div class="composer">
-        <input id="q" name="q" placeholder="예: 광주 살고 구직 중인데 27살이에요" autocomplete="off"/>
-        <button class="send" type="submit" aria-label="검색">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M4 11.5 20 4l-5.2 16.5-3.1-6.2L4 11.5Z" fill="currentColor"/>
-            </svg>
-        </button>
+<section class="home-prompts" aria-label="빠른 검색">
+    <div class="prompt-grid">
+        <button class="prompt-card" type="button" data-q="얼른 집에서 독립하고 싶어">얼른 집에서 독립하고 싶어</button>
+        <button class="prompt-card" type="button" data-q="취업 준비 비용이 부담돼">취업 준비 비용이 부담돼</button>
+        <button class="prompt-card" type="button" data-q="일하면서 배울 기회가 필요해">일하면서 배울 기회가 필요해</button>
     </div>
-</form>
+</section>
 <script src="<?= base_url() ?>js/welcome.js"></script>
